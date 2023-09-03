@@ -1,4 +1,4 @@
-﻿namespace Real_time_WeatherMonitoring_and_ReportingService
+﻿namespace RealTimeWeatherMonitoringAndReportingService.DataParser
 {
     public interface IWeatherDataParser
     {

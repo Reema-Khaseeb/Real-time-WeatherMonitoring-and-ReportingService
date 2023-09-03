@@ -1,4 +1,4 @@
-﻿namespace Real_time_WeatherMonitoring_and_ReportingService
+﻿namespace RealTimeWeatherMonitoringAndReportingService.DataParser
 {
     public class JsonWeatherDataParser : IWeatherDataParser
     {
@@ -7,7 +7,9 @@
             try
             {
                 WeatherData weatherData = Newtonsoft.Json.JsonConvert.DeserializeObject<WeatherData>(input);
+                Console.WriteLine(weatherData); 
                 return weatherData;
+                
             }
             catch (Exception ex)
             {

@@ -1,4 +1,6 @@
-﻿namespace Real_time_WeatherMonitoring_and_ReportingService
+﻿using RealTimeWeatherMonitoringAndReportingService.Bots;
+
+namespace RealTimeWeatherMonitoringAndReportingService
 {
     public class WeatherMonitoringService
     {

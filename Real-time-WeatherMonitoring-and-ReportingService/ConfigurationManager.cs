@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
+using RealTimeWeatherMonitoringAndReportingService.Bots;
 
-namespace Real_time_WeatherMonitoring_and_ReportingService
+namespace RealTimeWeatherMonitoringAndReportingService
 {
     public class ConfigurationManager
     {
-        private static BotConfigurations _configurations;
+        private static BotsTypes _configurations;
         private static readonly string ConfigFilePath = @"C:\\Users\\DELL\\Documents\\GitHub\\Real-time-WeatherMonitoring-and-ReportingService\\Real-time-WeatherMonitoring-and-ReportingService\\botConfig.json";
 
-        public static BotConfigurations GetConfiguration()
+        public static BotsTypes GetConfiguration()
         {
             // Read the configuration file and deserialize it if not already loaded
             _configurations ??= ReadBotConfigurations(ConfigFilePath);
@@ -15,12 +16,12 @@ namespace Real_time_WeatherMonitoring_and_ReportingService
             return _configurations;
         }
 
-        private static BotConfigurations ReadBotConfigurations(string configFilePath)
+        private static BotsTypes ReadBotConfigurations(string configFilePath)
         {
             try
             {
                 string json = File.ReadAllText(configFilePath);
-                BotConfigurations configurations = JsonConvert.DeserializeObject<BotConfigurations>(json);
+                var configurations = JsonConvert.DeserializeObject<BotsTypes>(json);
 
                 return configurations;
             }

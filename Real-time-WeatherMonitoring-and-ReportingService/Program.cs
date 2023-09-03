@@ -1,4 +1,6 @@
-﻿using Real_time_WeatherMonitoring_and_ReportingService;
+﻿using RealTimeWeatherMonitoringAndReportingService;
+using RealTimeWeatherMonitoringAndReportingService.DataParser;
+using RealTimeWeatherMonitoringAndReportingService.Bots;
 
 var botConfig = ConfigurationManager.GetConfiguration();
 
@@ -8,9 +10,9 @@ if (botConfig == null)
     Environment.Exit(1);
 }
 
-var rainBot = new RainBot(botConfig);
-var sunBot = new SunBot(botConfig);
-var snowBot = new SnowBot(botConfig);
+var rainBot = new RainBot(botConfig.RainBot);
+var sunBot = new SunBot(botConfig.SunBot);
+var snowBot = new SnowBot(botConfig.SnowBot);
 
 WeatherMonitoringService monitoringService = new WeatherMonitoringService();
 monitoringService.AddBot(rainBot);
@@ -20,7 +22,7 @@ monitoringService.AddBot(snowBot);
 
 while (true)
 {
-    Console.WriteLine("Enter weather data:");
+    Console.WriteLine("\n\nEnter weather data:");
     string input = Console.ReadLine();
     //TODO: put instance creation in the class
     WeatherDataParserFactory parserFactory = new WeatherDataParserFactory();
@@ -36,8 +38,12 @@ while (true)
 
         if (weatherData != null)
         {
-            Console.WriteLine($"Parsed Weather Data: Location={weatherData.Location}, Temperature={weatherData.Temperature}, Humidity={weatherData.Humidity}");
-            
+            Console.WriteLine(@$"Parsed Weather Data: 
+Location={weatherData.Location}, 
+Temperature={weatherData.Temperature}, 
+Humidity={weatherData.Humidity}");
+            Console.WriteLine();
+
             monitoringService.ProcessWeatherData(weatherData);
         }
     }

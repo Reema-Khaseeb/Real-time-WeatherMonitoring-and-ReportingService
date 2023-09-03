@@ -1,4 +1,4 @@
-﻿namespace Real_time_WeatherMonitoring_and_ReportingService
+﻿namespace RealTimeWeatherMonitoringAndReportingService.DataParser
 {
     public class XmlWeatherDataParser : IWeatherDataParser
     {
@@ -7,9 +7,10 @@
             try
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(WeatherData));
-                using (System.IO.StringReader reader = new System.IO.StringReader(input))
+                using (StringReader reader = new StringReader(input))
                 {
                     WeatherData weatherData = (WeatherData)serializer.Deserialize(reader);
+                    Console.WriteLine(weatherData);
                     return weatherData;
                 }
             }
