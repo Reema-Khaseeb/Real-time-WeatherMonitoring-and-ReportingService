@@ -6,10 +6,10 @@
         {
             try
             {
-                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(WeatherData));
-                using (StringReader reader = new StringReader(input))
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(WeatherData));
+                using (var reader = new StringReader(input))
                 {
-                    WeatherData weatherData = (WeatherData)serializer.Deserialize(reader);
+                    var weatherData = (WeatherData)serializer.Deserialize(reader);
                     Console.WriteLine(weatherData);
                     return weatherData;
                 }

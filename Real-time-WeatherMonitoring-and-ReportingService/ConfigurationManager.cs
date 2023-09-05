@@ -20,7 +20,7 @@ namespace RealTimeWeatherMonitoringAndReportingService
         {
             try
             {
-                string json = File.ReadAllText(configFilePath);
+                var json = File.ReadAllText(configFilePath);
                 var configurations = JsonConvert.DeserializeObject<BotsTypes>(json);
 
                 return configurations;

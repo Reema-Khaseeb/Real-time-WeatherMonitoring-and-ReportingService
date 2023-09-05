@@ -6,7 +6,7 @@
         {
             try
             {
-                WeatherData weatherData = Newtonsoft.Json.JsonConvert.DeserializeObject<WeatherData>(input);
+                var weatherData = Newtonsoft.Json.JsonConvert.DeserializeObject<WeatherData>(input);
                 Console.WriteLine(weatherData); 
                 return weatherData;
                 

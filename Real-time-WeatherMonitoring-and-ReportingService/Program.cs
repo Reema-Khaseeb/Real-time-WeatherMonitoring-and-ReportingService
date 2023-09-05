@@ -14,7 +14,7 @@ var rainBot = new RainBot(botConfig.RainBot);
 var sunBot = new SunBot(botConfig.SunBot);
 var snowBot = new SnowBot(botConfig.SnowBot);
 
-WeatherMonitoringService monitoringService = new WeatherMonitoringService();
+var monitoringService = new WeatherMonitoringService();
 monitoringService.AddBot(rainBot);
 monitoringService.AddBot(sunBot);
 monitoringService.AddBot(snowBot);
@@ -23,10 +23,10 @@ monitoringService.AddBot(snowBot);
 while (true)
 {
     Console.WriteLine("\n\nEnter weather data:");
-    string input = Console.ReadLine();
+    var input = Console.ReadLine();
     //TODO: put instance creation in the class
-    WeatherDataParserFactory parserFactory = new WeatherDataParserFactory();
-    IWeatherDataParser parser = parserFactory.CreateParser(input);
+    var parserFactory = new WeatherDataParserFactory();
+    var parser = parserFactory.CreateParser(input);
 
     if (parser == null)
     {
@@ -34,7 +34,7 @@ while (true)
     }
     else
     {
-        WeatherData weatherData = parser.Parse(input);
+        var weatherData = parser.Parse(input);
 
         if (weatherData != null)
         {
@@ -44,7 +44,7 @@ Temperature={weatherData.Temperature},
 Humidity={weatherData.Humidity}");
             Console.WriteLine();
 
-            monitoringService.ProcessWeatherData(weatherData);
+            monitoringService.ActivateBotsBasedOnConditions(weatherData);
         }
     }
 }

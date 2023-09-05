@@ -11,7 +11,7 @@ namespace RealTimeWeatherMonitoringAndReportingService
             _bots.Add(bot);
         }
 
-        public void ProcessWeatherData(WeatherData weatherData)
+        public void ActivateBotsBasedOnConditions(WeatherData weatherData)
         {
             foreach (var bot in _bots)
             {
@@ -19,5 +19,4 @@ namespace RealTimeWeatherMonitoringAndReportingService
             }
         }
     }
-
 }
