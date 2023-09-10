@@ -2,22 +2,22 @@
 {
     public class XmlWeatherDataParser : IWeatherDataParser
     {
-        public WeatherData Parse(string input)
+        public bool TryParse(string input, out WeatherData weatherData)
         {
             try
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(WeatherData));
                 using (var reader = new StringReader(input))
                 {
-                    var weatherData = (WeatherData)serializer.Deserialize(reader);
-                    Console.WriteLine(weatherData);
-                    return weatherData;
+                    weatherData = (WeatherData)serializer.Deserialize(reader);
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error parsing XML weather data: {ex.Message}");
-                return null;
+                weatherData = null;
+                return false;
             }
         }
     }

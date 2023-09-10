@@ -14,7 +14,7 @@
             if (_config.Enabled && weatherData.Temperature < _config.TemperatureThreshold)
             {
                 Console.WriteLine("SnowBot activated!");
-                Console.WriteLine($"SnowBot: {_config.Message}");
+                Console.WriteLine($"SnowBot: {_config.Message}\n");
             }
         }
     }

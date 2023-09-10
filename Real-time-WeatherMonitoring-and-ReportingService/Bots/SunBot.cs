@@ -14,7 +14,7 @@
             if (_config.Enabled && weatherData.Temperature > _config.TemperatureThreshold)
             {
                 Console.WriteLine("SunBot activated!");
-                Console.WriteLine($"SunBot: {_config.Message}");
+                Console.WriteLine($"SunBot: {_config.Message} \n");
             }
         }
     }

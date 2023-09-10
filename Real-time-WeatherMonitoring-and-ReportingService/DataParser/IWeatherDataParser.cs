@@ -2,6 +2,6 @@
 {
     public interface IWeatherDataParser
     {
-        WeatherData Parse(string input);
+        bool TryParse(string input, out WeatherData weatherData);
     }
 }

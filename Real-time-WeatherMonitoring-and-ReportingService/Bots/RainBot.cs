@@ -14,7 +14,7 @@
             if (_config.Enabled && weatherData.Humidity > _config.HumidityThreshold)
             {
                 Console.WriteLine("RainBot activated!");
-                Console.WriteLine($"RainBot: {_config.Message}");
+                Console.WriteLine($"RainBot: {_config.Message}\n");
             }
         }
     }
