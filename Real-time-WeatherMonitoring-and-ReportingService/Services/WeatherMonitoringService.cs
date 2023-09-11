@@ -1,6 +1,7 @@
-﻿using RealTimeWeatherMonitoringAndReportingService.Bots;
+﻿using RealTimeWeatherMonitoringAndReportingService.Interfaces;
+using RealTimeWeatherMonitoringAndReportingService.Models;
 
-namespace RealTimeWeatherMonitoringAndReportingService
+namespace RealTimeWeatherMonitoringAndReportingService.Services
 {
     public class WeatherMonitoringService
     {

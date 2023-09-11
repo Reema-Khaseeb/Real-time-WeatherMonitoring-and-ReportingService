@@ -1,4 +1,7 @@
-﻿namespace RealTimeWeatherMonitoringAndReportingService.Bots
+﻿using RealTimeWeatherMonitoringAndReportingService.Interfaces;
+using RealTimeWeatherMonitoringAndReportingService.Models;
+
+namespace RealTimeWeatherMonitoringAndReportingService.Services.Bots
 {
     public class SnowBot : IBot
     {

@@ -1,4 +1,4 @@
-﻿namespace RealTimeWeatherMonitoringAndReportingService
+﻿namespace RealTimeWeatherMonitoringAndReportingService.Models
 {
     public class WeatherData
     {

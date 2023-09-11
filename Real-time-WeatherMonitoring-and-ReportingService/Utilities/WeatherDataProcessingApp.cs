@@ -1,5 +1,8 @@
-﻿using RealTimeWeatherMonitoringAndReportingService.Bots;
-using RealTimeWeatherMonitoringAndReportingService.DataParser;
+﻿using RealTimeWeatherMonitoringAndReportingService.Interfaces;
+using RealTimeWeatherMonitoringAndReportingService.Models;
+using RealTimeWeatherMonitoringAndReportingService.Services;
+using RealTimeWeatherMonitoringAndReportingService.Services.Bots;
+using RealTimeWeatherMonitoringAndReportingService.Services.DataParser;
 
 namespace RealTimeWeatherMonitoringAndReportingService.Utilities
 {
@@ -29,7 +32,6 @@ namespace RealTimeWeatherMonitoringAndReportingService.Utilities
         {
             return parser.TryParse(input, out var weatherData) ? weatherData : null;
         }
-
 
         private static IWeatherDataParser CreateWeatherDataParser(string input)
         {

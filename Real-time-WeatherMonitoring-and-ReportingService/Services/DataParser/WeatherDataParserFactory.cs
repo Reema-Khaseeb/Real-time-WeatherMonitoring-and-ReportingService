@@ -1,4 +1,6 @@
-﻿namespace RealTimeWeatherMonitoringAndReportingService.DataParser
+﻿using RealTimeWeatherMonitoringAndReportingService.Interfaces;
+
+namespace RealTimeWeatherMonitoringAndReportingService.Services.DataParser
 {
     public class WeatherDataParserFactory
     {
@@ -12,7 +14,7 @@
                 { '<', () => new XmlWeatherDataParser() }
             };
         }
-        
+
         public IWeatherDataParser CreateParser(string input)
         {
             var trimmedInput = input.TrimStart();

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using RealTimeWeatherMonitoringAndReportingService.Bots;
+using RealTimeWeatherMonitoringAndReportingService.Models;
 
 namespace RealTimeWeatherMonitoringAndReportingService
 {

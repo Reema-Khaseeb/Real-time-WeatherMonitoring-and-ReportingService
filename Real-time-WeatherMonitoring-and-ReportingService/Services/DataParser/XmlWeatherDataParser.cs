@@ -1,4 +1,7 @@
-﻿namespace RealTimeWeatherMonitoringAndReportingService.DataParser
+﻿using RealTimeWeatherMonitoringAndReportingService.Interfaces;
+using RealTimeWeatherMonitoringAndReportingService.Models;
+
+namespace RealTimeWeatherMonitoringAndReportingService.Services.DataParser
 {
     public class XmlWeatherDataParser : IWeatherDataParser
     {

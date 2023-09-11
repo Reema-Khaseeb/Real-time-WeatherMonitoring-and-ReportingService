@@ -1,4 +1,4 @@
-﻿namespace RealTimeWeatherMonitoringAndReportingService.Bots
+﻿namespace RealTimeWeatherMonitoringAndReportingService.Models
 {
     public class BotsTypes
     {
